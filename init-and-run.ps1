@@ -16,3 +16,9 @@ else
 
 # Run the Confluent platform
 nuke ConfluentPlatformUp;
+
+# Wait for containers to start
+Start-Sleep -Seconds 30;
+
+# Launch Confluent Control Center
+Start-Process "http://localhost:9021/";
