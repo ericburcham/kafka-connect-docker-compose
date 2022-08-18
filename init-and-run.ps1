@@ -10,3 +10,12 @@ else
     Write-Output "NUKE global tool not found.  Installing."
     dotnet tool install Nuke.GlobalTool --global
 }
+
+# Configure git flow
+iex "git flow init -d --feature feature/ --bugfix bugfix/ --release release/ --hotfix hotfix/ --support support/ -t 'v'";
+
+# Checkout develop
+iex "git checkout develop"
+
+# Run the Confluent platform
+iex "nuke ConfluentPlatformUp"
